@@ -34,7 +34,11 @@
     <!-- @vue:mounted="init" -->
 
     <!-- NAVBAR -->
-    <header class="bg-white lg:static lg:overflow-y-visible">
+    <header
+      id="navbar"
+      :class="{'bg-white shadow': isScrolled || isMobileMenuOpen, 'bg-transparent': !isScrolled && !isMobileMenuOpen}"
+      class="fixed top-0 left-0 w-full z-50 transition-colors duration-300 ease-in-out"
+    >
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
           class="relative flex justify-between lg:gap-8 xl:grid xl:grid-cols-12"
@@ -85,7 +89,7 @@
             <button
               type="button"
               @click="toggleMobileMenu"
-              class="relative -mx-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#8B8E67]"
+              class="relative -mx-2 inline-flex items-center justify-center rounded-full p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#8B8E67]"
               aria-expanded="false"
             >
               <span class="absolute -inset-0.5"></span>
@@ -142,20 +146,19 @@
 
       <!-- Mobile Navbar -->
       <nav
-        class="lg:hidden"
-        aria-label="Global"
         v-show="isMobileMenuOpen"
-        class="mx-auto max-w-3xl space-y-1 px-2 pb-3 pt-2 sm:px-4"
+        class="lg:hidden mx-auto max-w-3xl space-y-1 px-2 pb-3 pt-2 sm:px-4 bg-white"
+        aria-label="Global"
       >
         <a
           v-for="page in pages"
           :key="page"
           href="#"
-          class="capitalize block rounded-md bg-gray-100 px-3 py-2 text-base text-center font-medium text-gray-900"
+          class="capitalize block rounded-md focus-visible-bg-gray-100 px-3 py-2 text-base text-center font-medium text-gray-900"
           @click.prevent="navigateTo(page)"
           >{{ page }}</a
         >
-        <div class="flex justify-center mt-4">
+        <div class="flex justify-center my-4">
           <a
             href="javascript:void(0)"
             @click.prevent="toggleModal"
@@ -167,7 +170,7 @@
       </nav>
     </header>
 
-    <main id="content" class="p-8 overflow-hidden">
+    <main id="content" class="p-8 pt-20 overflow-hidden">
       <!-- HOME -->
       <div
         v-if="activePage === 'home'"
@@ -197,13 +200,12 @@
         <!-- Text Section -->
         <div class="relative z-10 text-center lg:text-left">
           <h1 class="text-4xl font-bold text-heading font-heading mb-4">
-            Beautiful Skin, <span class="italic">Tailored to You</span>
+            Beautiful Skin, Tailored to <span class="italic">You</span>
           </h1>
-          <p class="text-base text-gray-700 mb-6">
-            If you’re looking for a personalized, holistic approach to skincare,
-            you’ve come to the right place. As a licensed esthetician and
-            skincare expert, I’m here to help you achieve your healthiest, most
-            radiant skin—all from the comfort of home.
+          <p class="text-lg text-gray-700 mb-6">
+            Welcome to personalized, holistic skincare. As your licensed
+            esthetician, I'm excited to help you achieve your healthiest, most
+            radiant skin right from home.
           </p>
           <div
             class="flex flex-col lg:flex-row lg:space-x-4 items-center lg:items-start"
@@ -226,7 +228,7 @@
 
         <!-- Olive Branch 2 -->
         <div
-          class="absolute -bottom-[100px] -left-32 w-56 h-56 bg-no-repeat rotate-[78deg] bg-contain opacity-25 z-0"
+          class="absolute top-[600px] -left-32 w-56 h-56 bg-no-repeat rotate-[78deg] bg-contain opacity-25 z-0"
           style="background-image: url('./assets/images/olive_branch_1.png')"
         ></div>
 
@@ -240,7 +242,7 @@
               &#8220;
             </span>
             <h1
-              class="text-2xl font-bold text-center text-gray-800 mx-10 font-heading italic font-bold"
+              class="text-3xl font-bold text-center text-gray-800 mx-10 font-heading italic font-bold"
             >
               Skincare is not <br />
               one size fits all
@@ -270,6 +272,12 @@
           </a>
         </div>
 
+        <!-- Olive Branch 3 -->
+        <div
+          class="absolute top-[1240px] -right-32 -rotate-[17deg] w-48 h-48 bg-no-repeat bg-contain opacity-25 z-0"
+          style="background-image: url('./assets/images/olive_branch_2.png')"
+        ></div>
+
         <!-- Services Section -->
         <div
           class="relative z-10 text-center mt-12 rounded-lg shadow px-6 py-4 bg-[#F6F2EF]"
@@ -277,7 +285,7 @@
           <h2 class="text-[#E3D8CE] font-accent lowercase text-7xl">
             Services
           </h2>
-          <h6 class="text-heading font-heading font-bold text-4xl mb-4">
+          <h6 class="text-heading font-heading font-bold text-3xl mb-4">
             Your skincare journey starts here
           </h6>
           <template v-for="(service, index) in services" :key="index">
@@ -437,7 +445,7 @@
     <!-- FOOTER -->
     <footer></footer>
 
-    <!-- Contact Modal -->
+    <!-- CONTACT MODAL -->
     <div
       class="relative z-10"
       aria-labelledby="modal-title"
@@ -459,17 +467,26 @@
         aria-hidden="true"
       ></div> -->
 
+      <!-- <div
+        v-show="isModalVisible"
+        @click="isModalVisible = false"
+        class="fixed inset-0 bg-gray-500/75 transition-opacity ease-out duration-300"
+        :class="{'opacity-0': !isModalVisible, 'opacity-100': isModalVisible}"
+        aria-hidden="true"
+      >
+    
+    </div> -->
+
+      <!-- <div
+        v-show="isModalVisible"
+        class="fixed inset-0 z-10 w-screen overflow-y-auto"
+      > -->
       <div
         v-show="isModalVisible"
         @click="isModalVisible = false"
         class="fixed inset-0 bg-gray-500/75 transition-opacity ease-out duration-300"
         :class="{'opacity-0': !isModalVisible, 'opacity-100': isModalVisible}"
         aria-hidden="true"
-      ></div>
-
-      <div
-        v-show="isModalVisible"
-        class="fixed inset-0 z-10 w-screen overflow-y-auto"
       >
         <div
           class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
