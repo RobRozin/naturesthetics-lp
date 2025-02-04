@@ -1,115 +1,3 @@
-// ========== OPTION 1 =============
-// async function loadComponent(file) {
-//   try {
-//     const response = await fetch(`./components/${file}`);
-//     if (!response.ok)
-//       throw new Error(`Failed to load ${file}: ${response.statusText}`);
-//     const html = await response.text();
-//     return html.trim();
-//   } catch (error) {
-//     console.error(`Error loading component ${file}:`, error);
-//     return `<p class="text-red-500">Error loading content.</p>`;
-//   }
-// }
-
-// const app = PetiteVue.createApp({
-//   currentPage: "home",
-//   pages: ["home", "about", "services", "book"],
-
-//   async loadComponent(file, target) {
-//     try {
-//       console.log(`Loading ${file}.html into #${target}`);
-
-//       const response = await fetch(`./components/${file}.html`);
-//       if (!response.ok)
-//         throw new Error(`Failed to load ${file}: ${response.statusText}`);
-
-//       document.getElementById(target).innerHTML = await response.text();
-//     } catch (error) {
-//       console.error(error);
-//       document.getElementById(id).innerHTML =
-//         '<p class="text-red-500">Error loading content.</p>';
-//     }
-//   },
-
-//   async loadPage(page) {
-//     if (!this.pages.includes(page)) {
-//       console.warn(`Page "${page}" not found. Loading Home instead.`);
-//       page = "home";
-//     }
-//     this.currentPage = page;
-//     await this.loadComponent(page, "content");
-//   },
-
-//   async init() {
-//     // Load shared components
-//     // await this.loadComponent("navbar", "navbar");
-//     // await this.loadComponent("footer", "footer");
-
-//     // Load the default page
-//     // await this.loadPage(this.currentPage);
-
-//     const navbarHtml = await loadComponent("navbar.html");
-//     document.getElementById("navbar").innerHTML = navbarHtml;
-//     PetiteVue.createApp(this).mount("#navbar"); // Mount reactivity for navbar
-
-//     // Load the footer
-//     const footerHtml = await loadComponent("footer.html");
-//     document.getElementById("footer").innerHTML = footerHtml;
-
-//     // Load the default page
-//     await this.loadPage(this.currentPage);
-//   },
-// });
-
-// app.mount();
-
-// ========= OPTION 2 ===========
-
-// const state = PetiteVue.reactive({
-//   currentPage: "home", // Default page
-//   pages: ["home", "about", "services"], // Pages for the navbar
-// });
-
-// async function loadSection(file, target) {
-//   try {
-//     const response = await fetch(`./components/${file}`);
-//     if (!response.ok)
-//       throw new Error(`Failed to load ${file}: ${response.statusText}`);
-//     const html = await response.text();
-//     document.getElementById(target).innerHTML = html;
-
-//     // Mount the reactivity to the newly loaded section
-//     if (target === "navbar" || target === "footer") {
-//       PetiteVue.createApp({ state, loadPage }).mount(`#${target}`);
-//     }
-//   } catch (error) {
-//     console.error(`Error loading section ${file}:`, error);
-//     document.getElementById(
-//       target
-//     ).innerHTML = `<p class="text-red-500">Error loading content.</p>`;
-//   }
-// }
-
-// async function loadPage(page) {
-//   if (!state.pages.includes(page)) {
-//     console.warn(`Page "${page}" not found. Defaulting to Home.`);
-//     page = "home";
-//   }
-//   state.currentPage = page;
-//   await loadSection(`${page}.html`, "content");
-// }
-
-// PetiteVue.createApp({
-//   state,
-//   loadPage,
-//   async init() {
-//     await loadSection("navbar.html", "navbar");
-//     await loadSection("footer.html", "footer");
-//     await loadPage(state.currentPage);
-//   },
-// }).mount();
-
 document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener(
     "scroll",
@@ -150,57 +38,70 @@ document.addEventListener("DOMContentLoaded", () => {
     openService: null,
     isScrolled: false,
 
-    navigateTo(pageId) {
-      history.pushState({ page: pageId }, "", "#" + pageId);
-      this.activePage = pageId;
-      this.isMobileMenuOpen = false;
-    },
+    // Hero Section Image Animation
+    heroImages: [
+      { src: "./assets/images/hero_about_3.jpg", alt: "Irina 3", show: false },
+      { src: "./assets/images/hero_about_2.jpg", alt: "Irina 2", show: false },
+      { src: "./assets/images/hero_about_1.jpg", alt: "Irina 1", show: false },
+    ],
+
     init() {
       window.addEventListener("popstate", (event) => {
         if (event.state && event.state.page) {
-          this.currentPage = event.state.page;
+          this.navigateTo(event.state.page, false); // Don't push state again
         }
       });
 
       const initialPage = window.location.hash.replace("#", "");
-      if (initialPage) this.navigateTo(initialPage);
+      if (initialPage) this.navigateTo(initialPage, false); // Don't push state for initial load
     },
+
+    navigateTo(pageId, pushState = true) {
+      if (pushState) {
+        history.pushState({ page: pageId }, "", "#" + pageId);
+      }
+      this.activePage = pageId;
+      this.isMobileMenuOpen = false;
+
+      // Scroll to the top of the page
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      // Trigger hero image animations if on the About page
+      if (pageId === "about") {
+        this.animateHeroImages();
+      }
+    },
+
     toggleService(serviceId) {
       if (this.openService === serviceId) return (this.openService = null);
       this.openService = serviceId;
     },
+
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
     },
+
     toggleModal() {
       this.isModalVisible = !this.isModalVisible;
     },
+
     checkScroll() {
       this.isScrolled = window.scrollY > 50;
+    },
+
+    // Hero Image Animation Logic
+    animateHeroImages() {
+      // Reset all images to hidden
+      this.heroImages.forEach((image) => (image.show = false));
+
+      // Trigger fade-in animations with a delay
+      this.heroImages.forEach((image, index) => {
+        setTimeout(() => {
+          image.show = true;
+        }, index * 500); // Delay each image by 500ms
+      });
     },
   };
 
   PetiteVue.createApp(app).mount();
-
-  // // Debounce function to limit how often a function can run
-  // function debounce(func, delay) {
-  //   let debounceTimer;
-  //   return function () {
-  //     const context = this;
-  //     const args = arguments;
-  //     clearTimeout(debounceTimer);
-  //     debounceTimer = setTimeout(() => {
-  //       func.apply(context, args);
-  //     }, delay);
-  //   };
-  // }
-
-  // // Wrap the updateNavbar method with debounce
-  // const debouncedScrollHandler = debounce(() => {
-  //   app.updateNavbar(); // Call updateNavbar method from Petite Vue instance
-  // }, 100); // Delay in milliseconds
-
-  // Add scroll event listener using the debounced handler
-  window.addEventListener("scroll", app.updateNavbar, { passive: true });
-  // window.addEventListener("scroll", debouncedScrollHandler, { passive: true });
 });
