@@ -20,19 +20,19 @@ document.addEventListener("DOMContentLoaded", () => {
         id: 1,
         title: "Comprehensive Consultation",
         details:
-          "We start with an in-depth consultation to fully understand your skin type, main concerns, and lifestyle. This allows us to design a skincare plan that is uniquely suited to your needs, creating the perfect foundation for a healthier, radiant complexion.",
+          "We begin with a detailed consultation to understand your skin type, concerns, and lifestyle, crafting a personalized plan for a healthier, radiant complexion.",
       },
       {
         id: 2,
         title: "Personalized Skincare Routine",
         details:
-          "Following the consultation, we craft a skincare routine tailored to you, including carefully selected products that align with your skin goals and budget. Our aim is to create a routine that’s both effective and easy to maintain, helping you achieve real, lasting results.",
+          "We create a custom skincare routine with products tailored to your goals and budget, ensuring it’s effective, easy to follow, and delivers lasting results.",
       },
       {
         id: 3,
         title: "Ongoing Support",
         details:
-          "You’ll receive two months of follow-up support, during which we’ll answer questions, provide guidance, and adjust your routine as needed. For clients seeking further help, we offer additional long-term support to enhance and sustain your skincare journey.",
+          "Enjoy two months of follow-up support with guidance and routine adjustments. Long-term support is also available to help you maintain your skincare success.",
       },
     ],
     openService: null,
