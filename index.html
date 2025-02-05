@@ -223,6 +223,7 @@
               </a>
               <a
                 href="javascript:void(0)"
+                @click.prevent="navigateTo('services')"
                 class="inline-flex justify-center text-center items-center rounded-full border-2 border-secondary w-full px-6 py-4 text-sm font-semibold text-secondary hover:bg-secondary hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary whitespace-nowrap mt-4 lg:mt-0"
               >
                 Learn More
@@ -270,7 +271,7 @@
               radiant.
             </p>
             <a
-              href="#about"
+              href="javascript:void(0)"
               @click="navigateTo('about')"
               class="inline-flex justify-center text-center items-center rounded-full border-2 border-secondary w-full px-6 py-4 text-sm font-semibold text-secondary hover:bg-secondary hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary whitespace-nowrap mt-4"
             >
@@ -329,6 +330,7 @@
                   <a
                     v-else
                     href="javascript:void(0)"
+                    @click="navigateTo('services')"
                     class="inline-flex justify-center items-center rounded-full border-2 border-secondary w-full px-6 py-4 text-sm font-semibold text-secondary hover:bg-secondary hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary whitespace-nowrap mt-4"
                   >
                     Learn More
