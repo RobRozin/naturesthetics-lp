@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadPartial("site-home", "./assets/components/home.html"),
     loadPartial("site-about", "./assets/components/about.html"),
     loadPartial("site-services", "./assets/components/services.html"),
+    loadPartial("site-footer", "./assets/components/footer.html"),
     loadPartial("site-contact-modal", "./assets/components/contact-modal.html"),
   ]);
 
@@ -32,21 +33,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     services: [
       {
         id: 1,
-        title: "Comprehensive Consultation",
+        title: "Free Diagnostics",
         details:
-          "We begin with a detailed consultation to understand your skin type, concerns, and lifestyle, crafting a personalized plan for a healthier, radiant complexion.",
+          "Start with a free mini-diagnostic to assess your skin, explain how I can help, and review consultation plans & costs.",
       },
       {
         id: 2,
-        title: "Personalized Skincare Routine",
+        title: "Consultation",
         details:
-          "We create a custom skincare routine with products tailored to your goals and budget, ensuring it’s effective, easy to follow, and delivers lasting results.",
+          "In-depth session to analyze your skin type, review your current routine, select the right products, and craft your personalized plan.",
       },
       {
         id: 3,
-        title: "Ongoing Support",
+        title: "Support",
         details:
-          "Enjoy two months of follow-up support with guidance and routine adjustments. Long-term support is also available to help you maintain your skincare success.",
+          "Get follow-up support—5 days with the Basic plan or 2 months with With Support—plus the option to extend as needed.",
       },
     ],
     openService: null,
