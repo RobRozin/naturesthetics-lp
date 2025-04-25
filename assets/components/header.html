@@ -1,0 +1,131 @@
+<header
+  id="navbar"
+  :class="{'bg-white shadow': isScrolled || isMobileMenuOpen, 'bg-transparent': !isScrolled && !isMobileMenuOpen}"
+  class="fixed top-0 left-0 w-full z-50 transition-colors duration-300 ease-in-out"
+>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="relative flex justify-between lg:gap-8 xl:grid xl:grid-cols-12">
+      <!-- Logo and Title -->
+      <div
+        class="flex md:absolute md:inset-y-0 md:left-0 lg:static xl:col-span-2"
+      >
+        <div class="flex shrink-0 items-center" @click="navigateTo('home')">
+          <a href="javascript:void(0)">
+            <img
+              class="h-20 w-auto"
+              src="./assets/images/naturesthetics_logo.png"
+              alt="Naturesthetics"
+            />
+          </a>
+          <h1 class="font-accent text-secondary text-5xl pt-4">
+            Naturesthetics
+          </h1>
+        </div>
+      </div>
+
+      <!-- Desktop Navbar -->
+      <div class="min-w-0 flex-1 md:px-8 lg:px-0 xl:col-span-6">
+        <div
+          class="flex items-center justify-center px-6 py-4 md:mx-auto md:max-w-3xl lg:mx-0 lg:max-w-none xl:px-0"
+        >
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex justify-center space-x-4">
+              <a
+                v-for="page in pages"
+                :key="page"
+                href="javascript:void(0)"
+                @click.prevent="navigateTo(page)"
+                class="capitalize rounded-md px-3 py-2 text-sm font-medium text-gray-500 hover:underline"
+              >
+                {{ page }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div
+        class="flex items-center md:absolute md:inset-y-0 md:right-0 lg:hidden"
+      >
+        <button
+          type="button"
+          @click="toggleMobileMenu"
+          class="relative -mx-2 inline-flex items-center justify-center rounded-full p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#8B8E67]"
+          aria-expanded="false"
+        >
+          <span class="absolute -inset-0.5"></span>
+          <span class="sr-only">Open menu</span>
+          <!-- Hamburger Icon -->
+          <svg
+            class="block size-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+            v-show="!isMobileMenuOpen"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+          <!-- X Icon -->
+          <svg
+            class="block size-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+            v-show="isMobileMenuOpen"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Book Consultation Button -->
+      <div class="hidden lg:flex lg:items-center lg:justify-end xl:col-span-4">
+        <a
+          href="javascript:void(0)"
+          @click.prevent="toggleModal"
+          class="ml-6 inline-flex items-center drop-shadow-md rounded-full bg-primary px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+        >
+          Book Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navbar -->
+  <nav
+    v-show="isMobileMenuOpen"
+    class="lg:hidden mx-auto max-w-3xl space-y-1 px-2 pb-3 pt-2 sm:px-4 bg-white"
+    aria-label="Global"
+  >
+    <a
+      v-for="page in pages"
+      :key="page"
+      href="#"
+      class="capitalize block rounded-md focus-visible-bg-gray-100 px-3 py-2 text-base text-center font-medium text-gray-900"
+      @click.prevent="navigateTo(page)"
+      >{{ page }}</a
+    >
+    <div class="flex justify-center my-4">
+      <a
+        href="javascript:void(0)"
+        @click.prevent="toggleModal"
+        class="inline-flex items-center drop-shadow-md rounded-full bg-primary px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+      >
+        Book Consultation
+      </a>
+    </div>
+  </nav>
+</header>

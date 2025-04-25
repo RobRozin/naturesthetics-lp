@@ -1,4 +1,18 @@
-document.addEventListener("DOMContentLoaded", () => {
+async function loadPartial(elId, url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Failed to load ${url}`);
+  document.getElementById(elId).innerHTML = await res.text();
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  await Promise.all([
+    loadPartial("site-header", "./assets/components/header.html"),
+    loadPartial("site-home", "./assets/components/home.html"),
+    loadPartial("site-about", "./assets/components/about.html"),
+    loadPartial("site-services", "./assets/components/services.html"),
+    loadPartial("site-contact-modal", "./assets/components/contact-modal.html"),
+  ]);
+
   window.addEventListener(
     "scroll",
     () => {

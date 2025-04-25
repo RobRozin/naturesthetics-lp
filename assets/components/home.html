@@ -1,0 +1,206 @@
+<div v-if="activePage === 'home'" class="relative lg:p-8">
+  <!-- Olive Branch 1 -->
+  <div
+    class="absolute -top-10 -right-20 rotate-[17deg] w-48 h-48 bg-no-repeat bg-contain opacity-25 z-0"
+    style="background-image: url('./assets/images/olive_branch_2.png')"
+  ></div>
+
+  <!-- Hero Section -->
+  <div
+    class="relative grid grid-cols-1 gap-8 items-center lg:grid-cols-2 lg:gap-12 lg:py-20 lg:py-6 px-6 lg:px-20"
+  >
+    <!-- Image Section -->
+    <div
+      class="w-full h-full flex justify-center items-center relative z-10 lg:order-last"
+    >
+      <div
+        class="w-full max-w-sm aspect-square overflow-hidden rounded-lg shadow-md"
+      >
+        <img
+          src="./assets/images/hero_main.jpg"
+          alt="Skincare"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+    <!-- Text Section -->
+    <div class="relative z-10 text-center lg:text-left lg:order-first">
+      <h1 class="text-4xl font-bold text-heading font-heading mb-4">
+        Beautiful Skin, Tailored to <span class="italic">You</span>
+      </h1>
+      <p class="text-lg text-gray-700 mb-6">
+        Welcome to personalized skincare. As your licensed holistic esthetician
+        and certified skin care expert, I'm excited to help you achieve your
+        healthiest, most radiant skin right from home.
+      </p>
+      <div
+        class="flex flex-col lg:flex-row lg:space-x-4 items-center lg:items-start"
+      >
+        <a
+          href="javascript:void(0)"
+          @click="toggleModal"
+          class="inline-flex justify-center text-center items-center drop-shadow-md rounded-full bg-primary w-full px-6 py-4 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 whitespace-nowrap"
+        >
+          Book Your Consultation
+        </a>
+        <a
+          href="javascript:void(0)"
+          @click.prevent="navigateTo('services')"
+          class="inline-flex justify-center text-center items-center rounded-full border-2 border-secondary w-full px-6 py-4 text-sm font-semibold text-secondary hover:bg-secondary hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary whitespace-nowrap mt-4 lg:mt-0"
+        >
+          Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Olive Branch 2 -->
+  <div
+    class="absolute top-[600px] -left-32 w-56 h-56 bg-no-repeat rotate-[78deg] bg-contain opacity-25 z-0"
+    style="background-image: url('./assets/images/olive_branch_1.png')"
+  ></div>
+
+  <!-- About Section -->
+  <div class="relative z-10 mt-12 flex justify-center">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-accent font-accent lowercase text-7xl">About Me</h2>
+      <div class="relative flex items-center justify-center mb-4">
+        <span
+          class="text-6xl text-primary absolute left-10 top-2 transform -translate-x-10 -translate-y-5 font-heading"
+        >
+          &#8220;
+        </span>
+        <h1
+          class="text-3xl font-bold text-center text-gray-800 mx-10 font-heading italic"
+        >
+          Skincare is not <br />
+          one size fits all
+        </h1>
+        <span
+          class="text-6xl text-primary absolute right-10 bottom-8 transform translate-x-10 translate-y-5 font-heading"
+        >
+          &#8221;
+        </span>
+      </div>
+
+      <p class="text-base font-body mb-6">
+        As a holistic esthetician, I believe in promoting real skin health. I
+        combine research-backed methods with cosmetic chemistry expertise to
+        create skincare routines tailored just for you. I choose effective
+        products without brand bias, so you get the best results without
+        unnecessary costs. Let’s work together on a personalized routine that
+        fits your lifestyle and leaves your skin radiant.
+      </p>
+      <a
+        href="javascript:void(0)"
+        @click="navigateTo('about')"
+        class="inline-flex justify-center text-center items-center rounded-full border-2 border-secondary w-full px-6 py-4 text-sm font-semibold text-secondary hover:bg-secondary hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary whitespace-nowrap mt-4"
+      >
+        Learn About Me & My Approach
+      </a>
+    </div>
+  </div>
+
+  <!-- Olive Branch 3 -->
+  <div
+    class="absolute top-[1240px] -right-32 -rotate-[17deg] w-48 h-48 bg-no-repeat bg-contain opacity-25 z-0"
+    style="background-image: url('./assets/images/olive_branch_2.png')"
+  ></div>
+
+  <!-- Services Section -->
+  <div class="relative z-10 mt-12 flex flex-col items-center">
+    <!-- Section Heading -->
+    <div class="text-center max-w-4xl mx-auto px-4">
+      <h2 class="text-[#E3D8CE] font-accent lowercase text-7xl">Services</h2>
+      <h6 class="text-heading font-heading font-bold text-3xl mb-8">
+        Your skincare journey starts here
+      </h6>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-4xl mx-auto px-4">
+      <template v-for="(service, index) in services" :key="index">
+        <div class="bg-[#F6F2EF] rounded-lg shadow p-6 flex flex-col">
+          <!-- Service Header -->
+          <div class="flex items-center mb-4">
+            <span class="text-4xl md:text-5xl font-accent text-[#E3D8CE] mr-4">
+              {{ service.id }}
+            </span>
+            <h6 class="text-xl md:text-2xl font-bold font-body">
+              {{ service.title }}
+            </h6>
+          </div>
+          <!-- Service Details -->
+          <p class="text-left text-base mb-4">{{ service.details }}</p>
+          <!-- Call-to-Action Button -->
+          <div class="mt-auto">
+            <a
+              v-if="index === 0"
+              href="javascript:void(0)"
+              @click="toggleModal"
+              class="inline-flex justify-center items-center drop-shadow-md rounded-full bg-primary w-full px-6 py-4 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 whitespace-nowrap"
+            >
+              Book Now
+            </a>
+            <a
+              v-else
+              href="javascript:void(0)"
+              @click="navigateTo('services')"
+              class="inline-flex justify-center items-center rounded-full border-2 border-secondary w-full px-6 py-4 text-sm font-semibold text-secondary hover:bg-secondary hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary whitespace-nowrap mt-4"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="relative z-10 my-12 flex justify-center">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-accent font-accent lowercase text-7xl">Contact</h2>
+      <div class="relative flex items-center justify-center mb-4">
+        <span
+          class="text-6xl text-primary absolute left-10 top-2 transform -translate-x-10 -translate-y-5 font-heading"
+        >
+          &#8220;
+        </span>
+        <h1
+          class="text-4xl font-bold text-center text-gray-800 mx-10 font-heading italic"
+        >
+          Questions? <br />
+          Let's chat...
+        </h1>
+        <span
+          class="text-6xl text-primary absolute right-10 bottom-8 transform translate-x-10 translate-y-5 font-heading"
+        >
+          &#8221;
+        </span>
+      </div>
+      <a
+        href="javascript:void(0)"
+        @click="toggleModal"
+        class="mt-6 inline-flex justify-center items-center drop-shadow-md rounded-full bg-primary w-full px-6 py-4 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 whitespace-nowrap"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="white"
+          class="size-6 mr-3"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"
+          />
+        </svg>
+
+        Message Me
+      </a>
+    </div>
+  </div>
+</div>

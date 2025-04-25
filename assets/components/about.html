@@ -1,0 +1,206 @@
+<div v-if="activePage === 'about'" class="lg:p-8">
+  <!-- Hero Section -->
+  <section class="lg:py-20 px-6 lg:px-20">
+    <div
+      class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+    >
+      <!-- Left Column: Title and Subtitle -->
+      <div>
+        <h1
+          class="text-5xl text-heading font-heading font-bold text-gray-900 mb-6"
+        >
+          Meet Your Skincare Expert
+        </h1>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Hello! I’m Irina, a holistic esthetician passionate about helping you
+          achieve radiant, healthy skin. My journey into esthetics began with a
+          desire to make a meaningful impact — transforming lives by teaching
+          people how to care for their skin with confidence.
+        </p>
+      </div>
+
+      <!-- Right Column: Overlapping Images with Fade-In Animation -->
+      <div class="relative h-96">
+        <div
+          v-for="(image, index) in heroImages"
+          :key="index"
+          class="absolute w-full h-full transition-opacity duration-1000"
+          :class="{
+        'opacity-0': !image.show,
+        'opacity-100': image.show,
+        'z-10': index === 0,
+        'z-20': index === 1,
+        'z-30': index === 2
+      }"
+          :style="`transform: rotate(${index === 0 ? '2deg' : index === 1 ? '-1deg' : '3deg'});`"
+        >
+          <img
+            :src="image.src"
+            :alt="image.alt"
+            class="w-full h-full object-cover rounded-lg shadow-lg"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- From IT to Skincare Section -->
+  <section class="py-20 px-6 lg:px-20 bg-gray-50">
+    <div
+      class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+    >
+      <!-- Left Column: Image -->
+      <div>
+        <img
+          src="./assets/images/about_it_to_skincare.png"
+          alt="From IT to Skincare"
+          class="w-full rounded-lg shadow-lg"
+        />
+      </div>
+      <!-- Right Column: Title and Subtitle -->
+      <div>
+        <h2 class="text-4xl font-bold text-gray-900 mb-6">
+          From IT to Skincare
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          For years, I worked in healthcare IT, but I craved a more personal way
+          to help people. That’s when I discovered esthetics. I wanted to
+          empower others, especially women, with the knowledge to nurture their
+          skin and feel beautiful in their own way.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Holistic Approach Section -->
+  <section class="py-20 px-6 lg:px-20">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold text-gray-900 mb-6">
+        A Holistic Approach to Skin Health
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+        Early in my training, I realized true expertise goes beyond basic
+        techniques or brand-specific protocols. I’ve always believed that skin
+        health is deeply connected to overall wellness, which led me to embrace
+        a holistic approach. By studying cosmetic chemistry, I gained the tools
+        to craft personalized routines and effective treatments tailored to
+        individual needs—free from reliance on expensive or ineffective
+        products.
+      </p>
+    </div>
+  </section>
+
+  <!-- Personal Transformation Section -->
+  <section class="py-20 px-6 lg:px-20 bg-gray-50">
+    <div
+      class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+    >
+      <!-- Left Column: Title and Subtitle -->
+      <div>
+        <h2 class="text-4xl font-bold text-gray-900 mb-6">
+          My Personal Transformation
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Like many, I struggled with periodic breakouts and skin issues that
+          affected my confidence. After years of trial and error with products
+          and painful treatments, I discovered the root of my problems: improper
+          care and misleading marketing. Through research and education, I
+          created a skincare routine that worked for me, transforming my skin
+          and inspiring my mission to help others avoid the same pitfalls.
+        </p>
+      </div>
+      <!-- Right Column: Image -->
+      <div>
+        <img
+          src="personal-transformation.jpg"
+          alt="Personal Transformation"
+          class="w-full rounded-lg shadow-lg"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Me Section -->
+  <section class="py-20 px-6 lg:px-20">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold text-gray-900 mb-12">Why Choose Me?</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Left Column: Testimonials -->
+        <div class="space-y-8">
+          <blockquote class="text-lg text-gray-600 italic">
+            “Irina transformed my skin! Her holistic approach is unlike anything
+            I’ve tried before.”
+          </blockquote>
+          <blockquote class="text-lg text-gray-600 italic">
+            “She’s knowledgeable, caring, and truly passionate about skincare.”
+          </blockquote>
+          <blockquote class="text-lg text-gray-600 italic">
+            “I finally feel confident in my own skin, thanks to Irina!”
+          </blockquote>
+        </div>
+        <!-- Right Column: Icon Bullet Points -->
+        <div class="space-y-6">
+          <div class="flex items-center space-x-4">
+            <span class="text-2xl">✅</span>
+            <p class="text-lg text-gray-600">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+          <div class="flex items-center space-x-4">
+            <span class="text-2xl">✅</span>
+            <p class="text-lg text-gray-600">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+          <div class="flex items-center space-x-4">
+            <span class="text-2xl">✅</span>
+            <p class="text-lg text-gray-600">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Let's Start Your Journey Section -->
+  <section class="py-20 px-6 lg:px-20 bg-gray-50">
+    <div class="container mx-auto text-center">
+      <!-- Title -->
+      <h2 class="text-4xl font-bold text-gray-900 mb-8">
+        Let's Start Your Journey
+      </h2>
+
+      <!-- Image -->
+      <div class="mb-8">
+        <img
+          src="./assets/images/plant_hero.png"
+          alt="Start Your Journey"
+          class="w-36 max-w-2xl mx-auto rounded-lg shadow-lg"
+        />
+      </div>
+
+      <!-- Rounded Button CTA -->
+      <a
+        href="#"
+        class="inline-block bg-gray-900 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-700 transition duration-300"
+      >
+        Let's Chat
+      </a>
+    </div>
+  </section>
+  <!-- <svg
+      width="200px"
+      height="200px"
+      xmlns="http://www.w3.org/2000/svg"
+      class="rotate-[35deg] mt-4"
+    >
+      <path
+        d="M10,10 Q150,130 290,10"
+        stroke="#A47D5D"
+        stroke-width="2"
+        fill="none"
+        stroke-dasharray="20,25"
+      />
+    </svg> -->
+</div>
