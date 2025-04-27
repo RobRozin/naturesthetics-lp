@@ -1,51 +1,109 @@
-<div v-if="activePage === 'services'" class="lg:p-8">
+<div v-if="activePage === 'services'" id="div-services" class="lg:p-8">
   <div class="container mx-auto px-2 lg:px-0 space-y-16">
     <!-- SERVICES Heading & Quick Pitch -->
-    <div class="text-center space-y-4">
-      <h2
-        class="text-4xl font-extrabold flex items-center justify-center space-x-2"
-      >
-        <span
-          class="bg-green-100 text-green-800 text-sm font-semibold px-2 py-1 rounded flex items-center"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="size-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m6.115 5.19.319 1.913A6 6 0 0 0 8.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 0 0 2.288-4.042 1.087 1.087 0 0 0-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 0 1-.98-.314l-.295-.295a1.125 1.125 0 0 1 0-1.591l.13-.132a1.125 1.125 0 0 1 1.3-.21l.603.302a.809.809 0 0 0 1.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 0 0 1.528-1.732l.146-.292M6.115 5.19A9 9 0 1 0 17.18 4.64M6.115 5.19A8.965 8.965 0 0 1 12 3c1.929 0 3.716.607 5.18 1.64"
-            />
-          </svg>
-          ONLINE</span
+    <section class="relative bg-cover bg-center">
+      <!-- dark overlay for contrast -->
+      <div class="absolute inset-0 bg-[#f6f2EF] rounded-lg"></div>
+
+      <div class="relative max-w-4xl mx-auto py-20 px-4 text-center space-y-8">
+        <!-- Heading -->
+        <h2 class="text-4xl font-extrabold">SERVICES</h2>
+
+        <!-- Sub-headline -->
+        <p class="text-lg max-w-2xl mx-auto">
+          Save time and money with a tailored skincare routine that works for
+          <span class="font-semibold">YOU</span>! Get expert guidance on the
+          most effective products for your skin type and budget.
+        </p>
+
+        <!-- Icons Row -->
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-12"
         >
-        <span>SERVICES</span>
-      </h2>
-      <p class="text-gray-700 max-w-2xl mx-auto">
-        Save time and money with a tailored skincare routine that works for
-        <span class="font-semibold">YOU</span>! Get expert guidance on the most
-        effective products for your skin type and budget.
-      </p>
-    </div>
+          <div class="flex flex-col items-center space-y-2">
+            <!-- GlobeAltIcon outline -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"
+              />
+            </svg>
+
+            <p class="text-base">Exclusivly online</p>
+          </div>
+
+          <div class="flex flex-col items-center space-y-2">
+            <!-- DocumentTextIcon outline -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+              />
+            </svg>
+
+            <p class="text-base">60+ page PDF skincare guide</p>
+          </div>
+
+          <div class="flex flex-col items-center space-y-2">
+            <!-- ChatBubbleLeftRightIcon outline -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+              />
+            </svg>
+
+            <p class="text-base">Ongoing support</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- 1. Free Diagnostics Row -->
     <section
       id="diagnostics"
-      class="flex flex-col lg:flex-row items-center gap-8 bg-white rounded-lg shadow p-8"
+      class="flex flex-col lg:flex-row items-center gap-8 bg-white rounded-lg border border-secondary p-8"
     >
-      <div class="lg:w-1/2">
+      <!-- <div class="lg:w-1/2">
         <img
           src="./assets/images/diagnostics.jpg"
           alt="Free Diagnostics"
-          class="w-full rounded-lg shadow-lg object-cover"
+          class="w-full rounded-lg object-cover"
         />
-      </div>
+      </div> -->
       <div class="lg:w-1/2 space-y-4">
-        <h3 class="text-2xl font-bold">Free Diagnostics</h3>
+        <div class="flex items-center mb-4">
+          <span class="text-4xl md:text-5xl font-accent text-[#E3D8CE] mr-4">
+            1
+          </span>
+          <h3 class="text-xl md:text-2xl font-bold font-body">
+            Free Diagnostics
+          </h3>
+        </div>
         <p class="text-gray-600">
           Our work starts with a free mini-diagnostic, where I will assess the
           condition of your skin, explain how I can help, and provide
@@ -54,7 +112,7 @@
         <a
           href="javascript:void(0)"
           @click="toggleModal"
-          class="inline-flex justify-center items-center drop-shadow-md rounded-full border-2 border-primary text-primary w-full px-6 py-4 text-sm font-semibold hover:bg-primary-500 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 whitespace-nowrap"
+          class="inline-flex justify-center items-center rounded-full border-2 border-primary text-primary w-full px-6 py-4 text-sm font-semibold hover:bg-primary-500 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 whitespace-nowrap"
         >
           Book Diagnostics Today
         </a>
@@ -64,12 +122,19 @@
     <!-- 2. Consultation + Who Is This Consultation For? Row -->
     <section
       id="consultation"
-      class="bg-white rounded-lg shadow p-8 space-y-12"
+      class="bg-white rounded-lg border border-secondary p-8 space-y-12"
     >
       <!-- Title & Intro aligned left, image on right -->
       <div class="flex flex-col lg:flex-row items-center gap-8">
         <div class="lg:w-1/2 space-y-4">
-          <h3 class="text-xl font-bold">Comprehensive Consultation</h3>
+          <div class="flex items-center mb-4">
+            <span class="text-4xl md:text-5xl font-accent text-[#E3D8CE] mr-4">
+              2
+            </span>
+            <h3 class="text-xl md:text-2xl font-bold font-body">
+              Comprehensive Consultation
+            </h3>
+          </div>
           <p class="text-gray-600 text-base">
             We start with an in-depth consultation to fully understand your skin
             type, main concerns, and lifestyle. This allows us to design a
@@ -77,178 +142,343 @@
             perfect foundation for a healthier, radiant complexion.
           </p>
         </div>
-        <div class="lg:w-1/2">
+        <!-- <div class="lg:w-1/2">
           <img
             src="./assets/images/consultation.jpg"
             alt="Consultation"
-            class="w-full rounded-lg shadow-lg object-cover"
+            class="w-full rounded-lg object-cover"
           />
-        </div>
+        </div> -->
       </div>
 
-      <!-- What’s included split into two columns -->
+      <!-- “What’s included” header -->
+      <div>
+        <h4 class="text-xl font-bold">What’s included in the consultation?</h4>
+      </div>
+
+      <!-- Content grid -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <!-- Left column: first two items -->
-        <div class="space-y-6">
-          <h4 class="text-xl font-semibold">
-            What’s included in the consultation?
-          </h4>
-          <div class="space-y-4">
-            <div class="flex items-start">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="size-6 text-secondary mr-2 flex-shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="1.5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m4.5 12.75 6 6 9-13.5"
-                />
-              </svg>
-              <div>
-                <span class="font-semibold">Skin Analysis</span><br />
+        <!-- Left column: items 1–3 -->
+        <div class="space-y-8">
+          <!-- 1) Skin Analysis -->
+          <div class="flex items-start space-x-4">
+            <span class="inline-block h-6 w-6 text-secondary font-bold"
+              >1.</span
+            >
+            <div>
+              <div class="font-semibold">Skin Analysis</div>
+              <p class="text-gray-600">
                 Determining your skin type and condition, assessing your skin
                 according to the Fitzpatrick scale, identifying any skin
                 concerns, and medical history collection.
-              </div>
+              </p>
             </div>
-            <div class="flex items-start">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="size-6 text-secondary mr-2 flex-shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="1.5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m4.5 12.75 6 6 9-13.5"
-                />
-              </svg>
-              <div>
-                <span class="font-semibold"
-                  >Analysis of Your Current Skincare Routine</span
-                ><br />
+          </div>
+
+          <!-- 2) Analysis of Your Current Skincare Routine -->
+          <div class="flex items-start space-x-4">
+            <span class="inline-block h-6 w-6 text-secondary font-bold"
+              >2.</span
+            >
+            <div>
+              <div class="font-semibold">
+                Analysis of Your Current Skincare Routine
+              </div>
+              <p class="text-gray-600">
                 I will review each product you use, explaining which products to
                 keep in your routine and which ones to replace, along with the
                 reasons why.
-              </div>
+              </p>
             </div>
           </div>
-        </div>
 
-        <!-- Right column: third item -->
-        <div class="space-y-6">
-          <div class="flex items-start">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="size-6 text-secondary mr-2 flex-shrink-0"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="1.5"
+          <!-- 3) Selection of Effective and Safe Skincare Products -->
+          <div class="flex items-start space-x-4">
+            <span class="inline-block h-6 w-6 text-secondary font-bold"
+              >3.</span
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m4.5 12.75 6 6 9-13.5"
-              />
-            </svg>
             <div>
-              <span class="font-semibold"
-                >Selection of Effective and Safe Skincare Products</span
-              >
-              <ul class="mt-2 list-disc list-inside ml-6 space-y-1">
-                <li>Makeup remover</li>
-                <li>Cleanser</li>
-                <li>Toner</li>
-                <li>Serum</li>
-                <li>Cream</li>
-                <li>Sunscreen</li>
-                <li>Exfoliant</li>
-                <li>Mask</li>
-                <li>Lip balm</li>
-                <li>Eye care product</li>
-                <li>SOS product</li>
+              <div class="font-semibold">
+                Selection of Effective and Safe Skincare Products
+              </div>
+              <ul class="mt-2 space-y-1">
+                <li class="flex items-start space-x-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 text-secondary flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Makeup remover</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 text-secondary flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Cleanser</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 text-secondary flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Toner</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 text-secondary flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Serum</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 text-secondary flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Cream</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 text-secondary flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Sunscreen</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 text-secondary flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Exfoliant</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 text-secondary flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Mask</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 text-secondary flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Lip balm</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 text-secondary flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">Eye care product</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 text-secondary flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600">SOS product</span>
+                </li>
               </ul>
               <p class="mt-2 text-gray-600">
                 When selecting products, your budget preferences are taken into
-                account.
+                account
               </p>
-              <p class="text-gray-600">
-                Each product will be provided with 1–3 options, including a
+              <p class="mt-2 text-gray-600">
+                Each product will be provided with 1-3 options, including a
                 description of the product’s effects, cost, and a link to the
-                store.
+                store
               </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column: items 4 & 5 -->
+        <div class="space-y-8">
+          <!-- 4) Creating an Effective Step-by-Step Skincare Strategy -->
+          <div class="flex items-start space-x-4">
+            <span class="inline-block h-6 w-6 text-secondary font-bold"
+              >4.</span
+            >
+            <div>
+              <div class="font-semibold">
+                Creating an Effective Step-by-Step Skincare Strategy
+              </div>
+              <p class="text-gray-600">
+                A personalized skincare plan based on your skin type and
+                concerns, where each product has a specific role to achieve the
+                desired results
+              </p>
+            </div>
+          </div>
+
+          <!-- 5) Lifestyle Recommendations -->
+          <div class="flex items-start space-x-4">
+            <span class="inline-block h-6 w-6 text-secondary font-bold"
+              >5.</span
+            >
+            <div>
+              <div class="font-semibold">Lifestyle Recommendations</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Remaining rows unchanged -->
-      <!-- Row 2: Strategy -->
+      <!-- Highlighted delivery info -->
       <div
-        class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center lg:flex-row-reverse"
+        class="bg-secondary bg-opacity-10 p-4 rounded-lg border-l-4 border-secondary font-semibold text-gray-800"
       >
-        <div>
-          <img
-            src="./assets/images/strategy.jpg"
-            alt="Skincare Strategy"
-            class="w-full rounded-lg shadow-lg object-cover"
+        <p>
+          As a result of the consultation, you will receive a personalized
+          skincare guide and routine in a PDF file, over 60 pages long.
+        </p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6 my-3 mx-auto"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
           />
-        </div>
-        <div>
-          <h4 class="text-xl font-semibold mb-4">
-            Creating an Effective Step-by-Step Skincare Strategy
-          </h4>
-          <p class="text-gray-600">
-            A personalized skincare plan based on your skin type and concerns,
-            where each product has a specific role to achieve the desired
-            results.
-          </p>
-        </div>
-      </div>
-
-      <!-- Row 3: Lifestyle Recommendations -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-        <div>
-          <h4 class="text-xl font-semibold mb-4">Lifestyle Recommendations</h4>
-          <p class="text-gray-600">
-            As a result of the consultation, you will receive a personalized
-            skincare guide and routine in a PDF file, over 60 pages long.<br />
-            The completion time is 5 business days from the payment date.
-          </p>
-        </div>
-        <div>
-          <img
-            src="./assets/images/lifestyle.jpg"
-            alt="Lifestyle Recommendations"
-            class="w-full rounded-lg shadow-lg object-cover"
-          />
-        </div>
+        </svg>
+        <p>The Completion time is 5 business days from the payment date.</p>
       </div>
     </section>
 
     <!-- 3. Support Row -->
     <section
       id="support"
-      class="flex flex-col lg:flex-row items-center gap-8 bg-white rounded-lg shadow p-8"
+      class="flex flex-col lg:flex-row items-center gap-8 bg-white rounded-lg border border-secondary p-8"
     >
-      <div class="lg:w-1/2">
+      <!-- <div class="lg:w-1/2">
         <img
           src="./assets/images/support.jpg"
           alt="Support"
-          class="w-full rounded-lg shadow-lg object-cover"
+          class="w-full rounded-lg object-cover"
         />
-      </div>
+      </div> -->
       <div class="lg:w-1/2 space-y-4">
-        <h3 class="text-2xl font-bold">Support</h3>
+        <div class="flex items-center mb-4">
+          <span class="text-4xl md:text-5xl font-accent text-[#E3D8CE] mr-4">
+            3
+          </span>
+          <h3 class="text-xl md:text-2xl font-bold font-body">Support</h3>
+        </div>
         <ul class="mt-2 space-y-3">
           <li class="flex items-start">
             <svg
@@ -294,24 +524,15 @@
             >
           </li>
           <li class="flex items-start">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="size-6 text-secondary mr-2 flex-shrink-0"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="1.5"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m4.5 12.75 6 6 9-13.5"
-              />
-            </svg>
             <span
-              >There is an option to extend individual support after the
-              two-month period.</span
+              class="h-6 w-6 mr-2 flex-shrink-0 flex items-center justify-center text-secondary text-2xl"
             >
+              *
+            </span>
+            <span>
+              There is an option to extend individual support after the
+              two-month period.
+            </span>
           </li>
         </ul>
       </div>
@@ -319,7 +540,7 @@
 
     <section id="plans" class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <!-- Basic Plan -->
-      <div class="bg-white rounded-lg shadow p-6 space-y-4">
+      <div class="bg-white rounded-lg border border-secondary p-6 space-y-4">
         <h4 class="text-xl font-bold">Basic Plan - $150</h4>
         <p class="italic text-gray-600">Ideal for non-problematic skin</p>
         <h5 class="font-semibold mt-4">What’s included:</h5>
@@ -327,7 +548,7 @@
           <li class="flex items-start">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="size-6 text-secondary mr-2"
+              class="size-6 text-secondary flex-shrink-0 mr-2"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -344,7 +565,7 @@
           <li class="flex items-start">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="size-6 text-secondary mr-2"
+              class="size-6 text-secondary flex-shrink-0 mr-2"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -361,7 +582,7 @@
           <li class="flex items-start">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="size-6 text-secondary mr-2"
+              class="size-6 text-secondary flex-shrink-0 mr-2"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -379,7 +600,7 @@
           <li class="flex items-start">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="size-6 text-secondary mr-2"
+              class="size-6 text-secondary flex-shrink-0 mr-2"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -396,7 +617,7 @@
           <li class="flex items-start">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="size-6 text-secondary mr-2"
+              class="size-6 text-secondary flex-shrink-0 mr-2"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -413,7 +634,7 @@
           <li class="flex items-start">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="size-6 text-secondary mr-2"
+              class="size-6 text-secondary flex-shrink-0 mr-2"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -428,16 +649,10 @@
             5 days of follow-up support after you receive your consultation
           </li>
         </ul>
-        <a
-          href="#book-basic"
-          class="inline-flex justify-center items-center drop-shadow-md rounded-full border-2 border-primary text-primary w-full px-6 py-4 text-sm font-semibold hover:bg-primary-500 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 whitespace-nowrap"
-        >
-          Choose Basic
-        </a>
       </div>
 
       <!-- Premium Plan -->
-      <div class="bg-white rounded-lg shadow p-6 space-y-4">
+      <div class="bg-white rounded-lg border border-secondary p-6 space-y-4">
         <h4 class="text-xl font-bold">Premium Plan - $250</h4>
         <p class="italic text-gray-600">
           Ideal for deeper work with skin concerns
@@ -447,7 +662,7 @@
           <li class="flex items-start">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="size-6 text-secondary mr-2"
+              class="size-6 text-secondary flex-shrink-0 mr-2"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -464,7 +679,7 @@
           <li class="flex items-start">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="size-6 text-secondary mr-2"
+              class="size-6 text-secondary flex-shrink-0 mr-2"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -487,7 +702,7 @@
           <li class="flex items-start">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="size-6 text-secondary mr-2"
+              class="size-6 text-secondary flex-shrink-0 mr-2"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -502,180 +717,76 @@
             Option to extend support after the initial 2 months: $40/month
           </li>
         </ul>
-        <a
-          href="#book-support"
-          class="inline-flex justify-center items-center drop-shadow-md rounded-full border-2 border-primary text-primary w-full px-6 py-4 text-sm font-semibold hover:bg-primary-500 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 whitespace-nowrap"
-        >
-          Choose Premium
-        </a>
       </div>
     </section>
 
     <!-- 4. FAQ -->
-    <section id="faq" class="bg-white rounded-lg shadow p-8 space-y-6">
+    <section
+      id="faq"
+      class="bg-white rounded-lg border border-secondary p-8 space-y-6"
+    >
       <h3 class="text-2xl font-bold mb-4">Frequently Asked Questions</h3>
 
-      <details class="border-t pt-4">
-        <summary class="cursor-pointer font-medium">
-          How does the consultation work?
-        </summary>
-        <div class="mt-3 text-gray-700 space-y-2">
-          <p>
-            The consultation takes place online via any messenger that’s
-            convenient for you. After you’ve made the payment, I’ll send you a
-            questionnaire with detailed questions to answer. I’ll also ask for
-            clear photos of your face and your current skincare products.
-          </p>
-          <p>
-            If needed, I may follow up with a few extra questions to ensure I
-            have a complete picture of your skin’s condition and needs.
-          </p>
-          <p>
-            Once all the information is collected, I’ll carefully analyze it and
-            build a personalized skincare plan tailored specifically to your
-            skin type, concerns, and goals. When selecting products, I always
-            take your budget into account to make sure your routine is both
-            effective and financially comfortable.
-          </p>
-          <p>
-            Within 5 business days, you’ll receive a detailed skincare guide and
-            step-by-step routine.
-          </p>
-          <p>
-            After reviewing your consultation, you are welcome to ask me any
-            questions.
-          </p>
+      <div v-for="(faq, index) in faqs" :key="index" class="border-t pt-4">
+        <div
+          class="flex items-center space-x-2 cursor-pointer"
+          @click="toggleFAQ(index)"
+        >
+          <!-- plus / minus -->
+          <svg
+            v-if="activeFAQ !== index"
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 flex-shrink-0 text-secondary"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 9v6m3-3H9"
+            />
+            <circle
+              cx="12"
+              cy="12"
+              r="9"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+          </svg>
+          <svg
+            v-else
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 flex-shrink-0 text-secondary"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h8" />
+            <circle
+              cx="12"
+              cy="12"
+              r="9"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+          </svg>
+          <span class="font-medium ml-3">{{ faq.question }}</span>
         </div>
-      </details>
-
-      <details class="border-t pt-4">
-        <summary class="cursor-pointer font-medium">
-          What’s Included in the Guide?
-        </summary>
-        <div class="mt-3 text-gray-700">
-          <p>
-            You’ll receive a personalized skincare guide of over 60 pages, which
-            includes:
-          </p>
-          <ul class="list-disc list-inside ml-6 space-y-1">
-            <li>Comprehensive skin analysis</li>
-            <li>Essential information about skincare products</li>
-            <li>
-              A breakdown of what products should be in your routine and why
-            </li>
-            <li>
-              Information on which products you can save money on, and which
-              ones are worth investing in
-            </li>
-            <li>
-              Detailed descriptions and usage instructions for each skincare
-              product
-            </li>
-            <li>Guidelines for the safe use and storage of skincare</li>
-            <li>Lifestyle recommendations</li>
-            <li>Skincare life hacks</li>
-            <li>
-              Special skincare recommendations (e.g. for winter, during
-              workouts, on flights, etc.)
-            </li>
-            <li>Skincare advice based on your specific skin concerns</li>
-            <li>
-              Review of your current skincare routine with comments on which
-              products can stay, which should be replaced, and why
-            </li>
-            <li>
-              Curated selections of effective, safe skincare products for each
-              category — with descriptions, prices, and links
-            </li>
-            <li>Step-by-step routines for how and when to use each product</li>
-            <li>Body care recommendations (upon request)</li>
-          </ul>
+        <div v-show="activeFAQ === index" class="mt-3 text-gray-700 space-y-2">
+          <div v-for="(answer, i) in faq.answers" :key="i">
+            <p v-if="answer && answer.tag === 'p'">{{ answer.text }}</p>
+            <ul
+              v-else-if="answer.tag === 'ul'"
+              class="list-disc list-inside ml-6 space-y-1"
+            >
+              <li v-for="(item, j) in answer.items" :key="j">{{ item }}</li>
+            </ul>
+          </div>
         </div>
-      </details>
-
-      <details class="border-t pt-4">
-        <summary class="cursor-pointer font-medium">
-          Can an online consultation be effective?
-        </summary>
-        <div class="mt-3 text-gray-700">
-          <p>
-            Yes, an online consultation can be very effective. To assess the
-            condition of your skin, all I need is a clear, high-quality photo of
-            your face without makeup (no worries – today, phones can take great
-            pictures!). It's also crucial to ask the right questions, which is
-            why I send a detailed questionnaire for you to fill out. By
-            reviewing your responses and photos, I can create an accurate
-            understanding of your skin and recommend a personalized skincare
-            routine.
-          </p>
-        </div>
-      </details>
-
-      <details class="border-t pt-4">
-        <summary class="cursor-pointer font-medium">
-          Which brands do you include in the consultation? Do I need to buy
-          skincare products from you after the consultation?
-        </summary>
-        <div class="mt-3 text-gray-700">
-          <p>
-            I do not work with specific brands. I focus on recommending the most
-            effective products based on your skin's needs and your budget, not
-            brand names or marketing promises. After the consultation, I'll
-            provide you with links to purchase the recommended products online
-            or in stores.
-          </p>
-        </div>
-      </details>
-
-      <details class="border-t pt-4">
-        <summary class="cursor-pointer font-medium">
-          What if one of the products you recommend doesn’t suit me?
-        </summary>
-        <div class="mt-3 text-gray-700">
-          <p>
-            It’s possible, though rare, to have an individual intolerance to a
-            specific ingredient. However, if that happens, I’m always available
-            to help you resolve the issue and find a suitable alternative.
-          </p>
-        </div>
-      </details>
-
-      <details class="border-t pt-4">
-        <summary class="cursor-pointer font-medium">
-          Why should I purchase a consultation if estheticians offer free
-          skincare recommendations?
-        </summary>
-        <div class="mt-3 text-gray-700 space-y-2">
-          <p>
-            Estheticians typically recommend products from brands they have
-            agreements with, earning a commission on each sale.
-          </p>
-          <p>
-            From my experience, many estheticians lack a deep understanding of
-            cosmetic chemistry, which means their product recommendations are
-            often based on personal observations rather than ingredient
-            analysis. What works for one person may not work for another because
-            everyone’s skin is unique.
-          </p>
-          <p>
-            Furthermore, estheticians who are not trained to read ingredient
-            labels often rely on what they’ve been taught during training or on
-            the product descriptions on the packaging. But, as you might know,
-            packaging descriptions can be misleading, as every brand promotes
-            its products in the best possible light. The only reliable source of
-            information is the ingredients list.
-          </p>
-          <p>
-            Many people believe that products prescribed by estheticians are
-            more effective because they are labeled as "professional." However,
-            this is a myth. Officially, there is no category of "professional
-            skincare products." All home-care products are classified as
-            "cosmetics," meaning the percentage of active ingredients is capped
-            by law. Therefore, these products are no more effective than those
-            available in retail stores.
-          </p>
-        </div>
-      </details>
+      </div>
     </section>
 
     <!-- Final CTA -->
@@ -684,7 +795,7 @@
       <a
         href="javascript:void(0)"
         @click="toggleModal"
-        class="inline-flex justify-center items-center drop-shadow-md rounded-full bg-primary w-full md:w-auto px-8 py-4 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 whitespace-nowrap"
+        class="inline-flex justify-center items-center rounded-full bg-primary w-full md:w-auto px-8 py-4 text-sm font-semibold text-white hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 whitespace-nowrap"
       >
         Claim Your Complimentary Diagnostic
       </a>

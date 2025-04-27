@@ -30,13 +30,19 @@
       }
     </style>
   </head>
-  <body id="app" class="font-body text-gray-800" v-cloak @vue:mounted="init">
+  <body
+    id="app"
+    class="font-body text-gray-800"
+    v-cloak
+    v-scope
+    @vue:mounted="init"
+  >
     <!-- HEADER -->
     <div id="site-header"></div>
 
     <main
       id="content"
-      class="container px-8 lg:px-16 pt-20 overflow-hidden mx-auto"
+      class="container px-4 lg:px-16 pt-20 overflow-hidden mx-auto"
     >
       <!-- HOME -->
       <div id="site-home"></div>
