@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadPartial("site-header", "./assets/components/header.html"),
     loadPartial("site-home", "./assets/components/home.html"),
     loadPartial("site-about", "./assets/components/about.html"),
-    loadPartial("site-services", "./assets/components/services.html"),
+    loadPartial("site-services", "./assets/components/services/index.html"),
     loadPartial("site-footer", "./assets/components/footer.html"),
     loadPartial("site-contact-modal", "./assets/components/contact-modal.html"),
   ]);
