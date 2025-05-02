@@ -14,7 +14,9 @@
         </span>
 
         <!-- Your main heading -->
-        <h2 class="relative z-10 text-4xl font-extrabold">SERVICES</h2>
+        <h2 class="relative z-10 text-4xl font-extrabold font-heading">
+          SERVICES
+        </h2>
 
         <!-- Sub-headline -->
         <p class="text-lg max-w-2xl mx-auto px-4">
@@ -44,7 +46,7 @@
               />
             </svg>
 
-            <p class="text-base font-heading text-2xl font-semibold">
+            <p class="text-base font-body text-2xl font-semibold">
               Exclusively Online
             </p>
           </div>
@@ -66,9 +68,8 @@
               />
             </svg>
 
-            <p class="text-base font-heading text-2xl px-12 font-semibold">
-              60<span class="font-bold text-3xl">+</span> Page PDF Skincare
-              Guide
+            <p class="text-base font-body text-2xl px-12 font-semibold">
+              60<sup>+</sup> Page PDF Skincare Guide
             </p>
           </div>
 
@@ -89,7 +90,7 @@
               />
             </svg>
 
-            <p class="text-base font-heading text-2xl font-semibold">
+            <p class="text-base font-body text-2xl font-semibold">
               Ongoing Support
             </p>
           </div>
@@ -117,7 +118,7 @@
             One
           </span>
           <h3 class="text-xl md:text-2xl font-bold font-body z-10 ms-4">
-            Free Diagnostics
+            Complimentary Diagnostics
           </h3>
         </div>
         <p class="text-gray-600">
@@ -128,7 +129,7 @@
         <a
           href="javascript:void(0)"
           @click="toggleModal"
-          class="inline-flex justify-center items-center rounded-full border-2 border-primary text-primary w-full px-6 py-4 text-sm font-semibold hover:bg-primary-500 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 whitespace-nowrap"
+          class="inline-flex justify-center items-center rounded-full border-2 border-primary text-primary w-full px-6 py-4 text-sm font-semibold hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 whitespace-nowrap"
         >
           Book Diagnostics Today
         </a>
@@ -490,7 +491,9 @@
           >
             Three
           </span>
-          <h3 class="text-xl md:text-2xl font-bold font-body z-10">Support</h3>
+          <h3 class="text-xl md:text-2xl font-bold font-body z-10">
+            Support & Beyond
+          </h3>
         </div>
         <ul class="mt-2 space-y-3">
           <li class="flex items-start">
@@ -509,7 +512,7 @@
               />
             </svg>
             <span
-              >5 days of individual support (included in the “Basic” Plan),
+              >5 days of individual support (included in the consultation),
               during which I’ll be available to answer any questions you may
               have.</span
             >
@@ -552,9 +555,12 @@
     </section>
 
     <section id="plans" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Basic Plan -->
+      <!-- Base Plan -->
       <div class="bg-white rounded-lg border-2 border-secondary p-6 space-y-4">
-        <h4 class="text-xl font-bold">Consultation - $150</h4>
+        <h4 class="text-xl font-bold flex justify-between items-center">
+          <span class="font-heading text-2xl">Consultation</span>
+          <span class="font-body text-xl pt-1">$150</span>
+        </h4>
         <p class="italic text-gray-500">Ideal for non-problematic skin</p>
         <h5 class="font-semibold mt-4">What’s included:</h5>
         <ul class="space-y-3 mt-2">
@@ -666,7 +672,10 @@
 
       <!-- Premium Plan -->
       <div class="bg-white rounded-lg border-2 border-secondary p-6 space-y-4">
-        <h4 class="text-xl font-bold">Plus Support - $250</h4>
+        <h4 class="font-bold flex justify-between items-center">
+          <span class="font-heading text-2xl">Support Plus</span>
+          <span class="font-body text-xl pt-1">$250</span>
+        </h4>
         <p class="italic text-gray-500">
           Ideal for deeper work with skin concerns
         </p>
@@ -687,7 +696,7 @@
                 d="m4.5 12.75 6 6 9-13.5"
               />
             </svg>
-            Everything in Basic Plan
+            Everything in <span class="italic ms-1">Consultation</span>
           </li>
           <li class="flex items-start">
             <svg
@@ -811,7 +820,7 @@
     </section>
 
     <!-- Final CTA -->
-    <section id="final-cta" class="text-center my-12 pb-12">
+    <section id="final-cta" class="text-center my-12 pb-16">
       <p class="text-2xl font-semibold">Ready to take the first step?</p>
       <img
         src="./assets/images/seedling_temp_icon.png"
