@@ -104,28 +104,46 @@
     </div>
   </div>
 
+  <!-- Backdrop (optional but recommended) -->
+  <div
+    v-show="isMobileMenuOpen"
+    class="fixed inset-0 z-40 bg-black/40 lg:hidden"
+    @click="isMobileMenuOpen = false"
+  ></div>
+
   <!-- Mobile Navbar -->
   <nav
     v-show="isMobileMenuOpen"
-    class="lg:hidden mx-auto max-w-3xl space-y-1 px-2 pb-3 pt-2 sm:px-4 bg-white"
-    aria-label="Global"
+    class="lg:hidden fixed inset-x-0 top-0 z-50 mx-auto mt-2 w-[92%] max-w-md rounded-2xl bg-white px-4 pt-4 pb-4 shadow-2xl ring-1 ring-black/5"
+    aria-label="Mobile"
+    @keydown.escape="isMobileMenuOpen = false"
   >
-    <a
-      v-for="page in pages"
-      :key="page"
-      href="#"
-      class="capitalize block rounded-md focus-visible-bg-gray-100 px-3 py-2 text-base text-center font-medium text-gray-900"
-      @click.prevent="navigateTo(page)"
-      >{{ page }}</a
-    >
-    <div class="flex justify-center my-4">
+    <ul class="flex flex-col items-stretch space-y-2">
+      <li v-for="page in pages" :key="page">
+        <a
+          href="#"
+          class="capitalize block w-full rounded-xl px-4 py-4 text-lg text-center font-medium text-gray-900 transition hover:bg-slate-50 active:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+          :class="{
+          'bg-slate-50 ring-1 ring-primary-200 text-primary-700': activePage === page
+        }"
+          @click.prevent="navigateTo(page)"
+        >
+          {{ page }}
+        </a>
+      </li>
+    </ul>
+
+    <div class="mt-5">
       <a
         href="javascript:void(0)"
-        @click.prevent="toggleModal"
-        class="inline-flex items-center drop-shadow-md rounded-full bg-primary px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+        @click.prevent="isMobileMenuOpen = false; toggleModal()"
+        class="block w-full rounded-full text-center bg-primary px-6 py-4 text-base font-semibold text-white shadow-md hover:brightness-105 active:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
       >
         Book Now
       </a>
     </div>
+
+    <!-- keeps CTA clear of iOS home indicator -->
+    <div class="pt-2 pb-[max(env(safe-area-inset-bottom),0.75rem)]"></div>
   </nav>
 </header>
