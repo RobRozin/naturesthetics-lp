@@ -160,7 +160,7 @@ const app = {
     {
       id: "instagram",
       label: "Send Message on Instagram",
-      href: "https://instagram.com/therozin",
+      href: "https://instagram.com/natur_esthetics",
       appendMessage: false,
       color: "#FF0069",
       note: null,
