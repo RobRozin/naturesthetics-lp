@@ -1,7 +1,14 @@
 async function loadPartial(elId, url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Failed to load ${url}`);
-  document.getElementById(elId).innerHTML = await res.text();
+  const html = await res.text();
+
+  const el = document.getElementById(elId);
+  if (!el) {
+    console.warn(`[loadPartial] target #${elId} not found when loading ${url}`);
+    return; // or throw new Error(...) if you prefer failing fast
+  }
+  el.innerHTML = html;
 }
 
 const app = {
@@ -16,21 +23,24 @@ const app = {
   services: [
     {
       id: 1,
-      title: "Free Diagnostics",
+      accent: "One",
+      title: "Complimentary Diagnostics",
       details:
         "Start with a free mini-diagnostic to assess your skin, explain how I can help, and review consultation plans & costs.",
     },
     {
       id: 2,
+      accent: "Two",
       title: "Comprehensive Consultation",
       details:
         "In-depth session to analyze your skin type, review your current routine, select the right products, and craft your personalized plan.",
     },
     {
       id: 3,
+      accent: "Three",
       title: "Support",
       details:
-        "Get follow-up support—5 days with the Basic plan or 2 months with Premium plan the option to extend as needed.",
+        "Get follow-up support: 5 days included with consultation and an optional 2 months with the option to extend as needed.",
     },
   ],
   faqs: [
@@ -138,6 +148,44 @@ const app = {
       ],
     },
   ],
+  contactOptions: [
+    {
+      id: "telegram",
+      label: "Send Message on Telegram",
+      href: "https://t.me/the_rozin?text=",
+      appendMessage: true,
+      color: "#26A5E4",
+      note: "Fast",
+    },
+    {
+      id: "instagram",
+      label: "Send Message on Instagram",
+      href: "https://instagram.com/therozin",
+      appendMessage: false,
+      color: "#FF0069",
+      note: null,
+    },
+    {
+      id: "messenger",
+      label: "Send Message on Messenger",
+      href: "https://m.me/mynameisnotRob?text=",
+      appendMessage: true,
+      color: "#00B2FF",
+      note: null,
+    },
+    {
+      id: "imessage",
+      label: "Send Message on iMessage",
+      href: "sms:2152053186&body=",
+      appendMessage: true,
+      color: "#34DA50",
+      note: null,
+    },
+  ],
+
+  contactHref(opt) {
+    return opt.appendMessage ? opt.href + this.templateMessage : opt.href;
+  },
   openService: null,
   isScrolled: false,
 
@@ -211,14 +259,45 @@ const app = {
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
-  await Promise.all([
+  const globals = [
     loadPartial("site-header", "./assets/components/header.html"),
     loadPartial("site-home", "./assets/components/home.html"),
     loadPartial("site-about", "./assets/components/about.html"),
     loadPartial("site-services", "./assets/components/services/index.html"),
     loadPartial("site-footer", "./assets/components/footer.html"),
     loadPartial("site-contact-modal", "./assets/components/contact-modal.html"),
-  ]);
+  ];
+
+  // load your services pieces…
+  const services = [
+    loadPartial("services-hero", "./assets/components/services/01-hero.html"),
+    loadPartial(
+      "services-diagnostics",
+      "./assets/components/services/02-diagnostics.html"
+    ),
+    loadPartial(
+      "services-consultation",
+      "./assets/components/services/03-consultation.html"
+    ),
+    loadPartial(
+      "services-support",
+      "./assets/components/services/04-support.html"
+    ),
+    loadPartial(
+      "services-pricing",
+      "./assets/components/services/05-pricing.html"
+    ),
+    loadPartial("services-faq", "./assets/components/services/06-faq.html"),
+    loadPartial(
+      "services-final-cta",
+      "./assets/components/services/07-final-cta.html"
+    ),
+  ];
+
+  // fire them all in parallel
+  await Promise.all([...globals]);
+
+  await Promise.all([...services]);
 
   PetiteVue.createApp(app).mount("#app");
 
