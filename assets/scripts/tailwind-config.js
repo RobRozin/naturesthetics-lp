@@ -4,7 +4,7 @@ tailwind.config = {
       fontFamily: {
         body: ['"Nunito Sans"', "sans-serif"], // Main body font
         heading: ['"Playfair Display"', "serif"], // Secondary header font
-        accent: ['"Mrs Saint Delafield"', "serif"],
+        accent: ['"Dancing Script"', "serif"],
       },
       colors: {
         heading: "#2B2D42",

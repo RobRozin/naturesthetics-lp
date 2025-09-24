@@ -1,27 +1,32 @@
-<div v-if="activePage === 'about'" class="lg:p-8">
-  <!-- 1) HERO -->
-  <section class="lg:py-20 px-6 lg:px-20">
+<div v-if="activePage === 'about'">
+  <!-- ABOUT HERO -->
+  <section class="relative w-full overflow-hidden">
+    <!-- Background gradient (matches photo bg) -->
     <div
-      class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+      class="absolute inset-0 bg-gradient-to-r from-[#ebefee] via-[#ebefee] to-transparent"
+    ></div>
+
+    <div
+      class="relative container mx-auto px-6 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
     >
       <!-- Text -->
-      <div class="flex flex-col">
+      <div class="flex flex-col z-10 px-20">
         <h1
-          class="text-4xl text-heading font-heading font-bold text-gray-900 mb-6 text-center lg:text-left"
+          class="text-6xl text-heading font-heading font-bold text-gray-900 mb-6 text-center lg:text-left"
         >
           Meet Your Skincare Expert
         </h1>
 
-        <!-- Mobile photo (between heading + body) -->
+        <!-- Mobile photo -->
         <div class="relative h-72 w-full mb-6 lg:hidden">
           <img
             src="./assets/images/about/hero-portrait.jpg"
             alt="Irina — Holistic Esthetician"
-            class="w-full h-full object-cover rounded-lg shadow-lg"
+            class="w-full h-full object-cover [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] [mask-repeat:no-repeat] [mask-size:100%_100%] [mask-position:center] [--webkit-mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] [--webkit-mask-repeat:no-repeat] [--webkit-mask-size:100%_100%] [--webkit-mask-position:center]"
           />
         </div>
 
-        <p class="text-lg text-gray-600 leading-relaxed text-left max-w-prose">
+        <p class="text-lg text-gray-600 text-left max-w-prose leading-8">
           Hello! I’m Irina, a holistic esthetician passionate about helping you
           achieve radiant, healthy skin. I combine research-backed methods with
           cosmetic chemistry know-how to craft routines that fit your lifestyle
@@ -30,11 +35,11 @@
       </div>
 
       <!-- Desktop photo -->
-      <div class="relative h-96 hidden lg:block">
+      <div class="relative h-[28rem] hidden lg:block z-10">
         <img
           src="./assets/images/about/hero-portrait.jpg"
           alt="Irina — Holistic Esthetician"
-          class="w-full h-full object-cover rounded-lg shadow-lg"
+          class="h-full w-auto object-cover mx-auto [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] [mask-repeat:no-repeat] [mask-size:100%_100%] [mask-position:center] [--webkit-mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] [--webkit-mask-repeat:no-repeat] [--webkit-mask-size:100%_100%] [--webkit-mask-position:center]"
         />
       </div>
     </div>
@@ -45,24 +50,6 @@
     <div
       class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
     >
-      <!-- Centered icon row -->
-      <div class="order-1 lg:col-span-2 flex justify-center">
-        <svg
-          class="h-16 w-16 lg:h-20 lg:w-20 text-[#7A8453]"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          aria-hidden="true"
-        >
-          <!-- Leaf + droplet -->
-          <path
-            d="M12 3c-3.5 3.8-5.5 6.5-5.5 9A5.5 5.5 0 0 0 12 17a5.5 5.5 0 0 0 5.5-5.5c0-2.5-2-5.2-5.5-8.5Z"
-          />
-          <path d="M7 14c2.2.1 4.1-.6 5.7-2.2 1.3-1.3 2-3 2.2-4.8" />
-        </svg>
-      </div>
-
       <!-- Copy (spans both columns so it sits under the centered icon) -->
       <div class="order-2 lg:col-span-2">
         <h2
@@ -126,7 +113,7 @@
         <a
           v-for="(p, i) in igPhotos"
           :key="i"
-          href="https://instagram.com/therozin"
+          href="https://instagram.com/natur_esthetics"
           target="_blank"
           rel="noopener"
           class="group aspect-square overflow-hidden rounded-lg ring-1 ring-black/5"

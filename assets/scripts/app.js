@@ -12,7 +12,7 @@ async function loadPartial(elId, url) {
 }
 
 const app = {
-  pages: ["home", "about", "services"],
+  pages: ["home", "services", "about"],
   activePage: "home",
   activeFAQ: null,
   isMobileMenuOpen: false,
@@ -38,7 +38,7 @@ const app = {
     {
       id: 3,
       accent: "Three",
-      title: "Support",
+      title: "Ongoing Support",
       details:
         "Get follow-up support: 5 days included with consultation and an optional 2 months with the option to extend as needed.",
     },
@@ -152,7 +152,7 @@ const app = {
     {
       id: "telegram",
       label: "Send Message on Telegram",
-      href: "https://t.me/the_rozin?text=",
+      href: "https://t.me/irenasmirnowa?text=",
       appendMessage: true,
       color: "#26A5E4",
       note: "Fast",
@@ -166,19 +166,11 @@ const app = {
       note: null,
     },
     {
-      id: "messenger",
-      label: "Send Message on Messenger",
-      href: "https://m.me/mynameisnotRob?text=",
+      id: "whatsapp",
+      label: "Message Me on WhatsApp",
+      href: "https://wa.me/12154212775",
       appendMessage: true,
-      color: "#00B2FF",
-      note: null,
-    },
-    {
-      id: "imessage",
-      label: "Send Message on iMessage",
-      href: "sms:2152053186&body=",
-      appendMessage: true,
-      color: "#34DA50",
+      color: "#25D366",
       note: null,
     },
   ],
@@ -195,6 +187,8 @@ const app = {
     { src: "./assets/images/hero_about_2.jpg", alt: "Irina 2", show: false },
     { src: "./assets/images/hero_about_1.jpg", alt: "Irina 1", show: false },
   ],
+
+  instaPosts: ["first", "second", "third"],
 
   init() {
     window.addEventListener("popstate", (event) => {

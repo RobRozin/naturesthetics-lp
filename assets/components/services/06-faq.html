@@ -1,62 +1,95 @@
-<div
-  class="bg-white rounded-lg border border-secondary p-8 space-y-6 overflow-hidden"
->
-  <div class="flex items-center my-2 relative">
-    <span
-      class="absolute -top-20 -left-5 text-[6rem] md:text-5xl font-accent text-accent mr-4 lowercase"
-    >
-      FAQ
-    </span>
-    <!-- <h3 class="text-xl md:text-2xl font-bold font-body z-10">Support</h3> -->
-    <h3 class="text-2xl font-bold mb-4 z-10">Frequently Asked Questions</h3>
+<!-- FAQ -->
+<section class="px-6 lg:px-20 py-6">
+  <div class="text-center max-w-4xl mx-auto px-4">
+    <h2 class="text-[#E3D8CE] font-accent text-7xl mb-4">FAQ</h2>
   </div>
+  <article
+    class="bg-white border border-secondary/70 rounded-lg mx-auto max-w-5xl p-8"
+  >
+    <!-- Heading -->
+    <header class="relative mb-4">
+      <!-- <span
+        class="absolute -top-10 -left-2 text-[3.75rem] lg:text-[4.75rem] leading-none font-accent text-accent/80 lowercase select-none"
+      >
+        faq
+      </span> -->
+      <h3 class="text-2xl font-bold font-body">Frequently Asked Questions</h3>
+    </header>
 
-  <div v-for="(faq, index) in faqs" :key="index" class="border-t pt-4">
-    <div
-      class="flex items-center space-x-2 cursor-pointer"
-      @click="toggleFAQ(index)"
-    >
-      <!-- plus / minus -->
-      <svg
-        v-if="activeFAQ !== index"
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6 flex-shrink-0 text-secondary"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        stroke-width="2"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M12 9v6m3-3H9"
-        />
-        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
-      </svg>
-      <svg
-        v-else
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6 flex-shrink-0 text-secondary"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        stroke-width="2"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h8" />
-        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
-      </svg>
-      <span class="font-medium ml-3">{{ faq.question }}</span>
-    </div>
-    <div v-show="activeFAQ === index" class="mt-3 text-gray-700 space-y-2">
-      <div v-for="(answer, i) in faq.answers" :key="i">
-        <p v-if="answer && answer.tag === 'p'">{{ answer.text }}</p>
-        <ul
-          v-else-if="answer.tag === 'ul'"
-          class="list-disc list-inside ml-6 space-y-1"
+    <!-- List -->
+    <div class="divide-y divide-secondary/30">
+      <div v-for="(faq, index) in faqs" :key="index" class="py-4">
+        <!-- Toggle button -->
+        <button
+          type="button"
+          class="w-full flex items-start gap-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 rounded-md px-1"
+          @click="toggleFAQ(index)"
+          @keydown.enter.prevent="toggleFAQ(index)"
+          @keydown.space.prevent="toggleFAQ(index)"
+          :aria-expanded="activeFAQ === index"
+          :aria-controls="`faq-panel-${index}`"
         >
-          <li v-for="(item, j) in answer.items" :key="j">{{ item }}</li>
-        </ul>
+          <!-- icon: plus/minus in a circle -->
+          <span class="mt-0.5">
+            <svg
+              v-if="activeFAQ !== index"
+              class="h-6 w-6 text-secondary"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 8v8M8 12h8"
+              />
+            </svg>
+            <svg
+              v-else
+              class="h-6 w-6 text-secondary"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8 12h8"
+              />
+            </svg>
+          </span>
+
+          <span class="font-medium leading-6 flex-1"> {{ faq.question }} </span>
+        </button>
+
+        <!-- Panel -->
+        <div
+          :id="`faq-panel-${index}`"
+          v-show="activeFAQ === index"
+          class="mt-3 text-gray-700 space-y-2 pl-10"
+        >
+          <div v-for="(answer, i) in faq.answers" :key="i">
+            <p v-if="answer && answer.tag === 'p'" class="leading-7">
+              {{ answer.text }}
+            </p>
+
+            <ul
+              v-else-if="answer.tag === 'ul'"
+              class="list-disc list-outside ml-5 space-y-1"
+            >
+              <li v-for="(item, j) in answer.items" :key="j" class="leading-7">
+                {{ item }}
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </article>
+</section>

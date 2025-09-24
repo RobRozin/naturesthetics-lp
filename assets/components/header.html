@@ -17,30 +17,9 @@
               alt="Naturesthetics"
             />
           </a>
-          <h1 class="font-accent text-secondary text-5xl pt-4">
+          <h1 class="font-['Mrs_Saint_Delafield'] text-secondary text-5xl pt-4">
             Naturesthetics
           </h1>
-        </div>
-      </div>
-
-      <!-- Desktop Navbar -->
-      <div class="min-w-0 flex-1 md:px-8 lg:px-0 xl:col-span-6">
-        <div
-          class="flex items-center justify-center px-6 py-4 md:mx-auto md:max-w-3xl lg:mx-0 lg:max-w-none xl:px-0"
-        >
-          <div class="hidden sm:ml-6 sm:block">
-            <div class="flex justify-center space-x-4">
-              <a
-                v-for="page in pages"
-                :key="page"
-                href="javascript:void(0)"
-                @click.prevent="navigateTo(page)"
-                class="capitalize rounded-md px-3 py-2 text-sm font-medium text-gray-500 hover:underline"
-              >
-                {{ page }}
-              </a>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -92,7 +71,18 @@
       </div>
 
       <!-- Book Diagnostics Button -->
-      <div class="hidden lg:flex lg:items-center lg:justify-end xl:col-span-4">
+      <div class="hidden lg:flex lg:items-center lg:justify-end xl:col-span-10">
+        <div class="flex justify-center space-x-4">
+          <a
+            v-for="page in pages"
+            :key="page"
+            href="javascript:void(0)"
+            @click.prevent="navigateTo(page)"
+            class="capitalize rounded-md px-3 py-2 text-sm font-medium text-gray-500 hover:underline"
+          >
+            {{ page }}
+          </a>
+        </div>
         <a
           href="javascript:void(0)"
           @click.prevent="toggleModal"
