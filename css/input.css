@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* your tokens / overrides */
+:root {
+  --bg: #faf7f3;
+  --surface: #ffffff;
+  --text: #2b2b2b;
+  --muted: #6b6b6b;
+  --accent: #7a8453;
+  --line: #e8e2da;
+}
+html.dark {
+  --bg: #121312;
+  --surface: #181a18;
+  --text: #e8e5df;
+  --muted: #b7b5ae;
+  --accent: #9caf6b;
+  --line: #2a2d2a;
+}

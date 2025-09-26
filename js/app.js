@@ -183,9 +183,9 @@ const app = {
 
   // Hero Section Image Animation
   heroImages: [
-    { src: "./assets/images/hero_about_3.jpg", alt: "Irina 3", show: false },
-    { src: "./assets/images/hero_about_2.jpg", alt: "Irina 2", show: false },
-    { src: "./assets/images/hero_about_1.jpg", alt: "Irina 1", show: false },
+    { src: "./images/about/hero_about_3.jpg", alt: "Irina 3", show: false },
+    { src: "./images/about/hero_about_2.jpg", alt: "Irina 2", show: false },
+    { src: "./images/about/hero_about_1.jpg", alt: "Irina 1", show: false },
   ],
 
   instaPosts: ["first", "second", "third"],
@@ -254,38 +254,29 @@ const app = {
 
 document.addEventListener("DOMContentLoaded", async () => {
   const globals = [
-    loadPartial("site-header", "./assets/components/header.html"),
-    loadPartial("site-home", "./assets/components/home.html"),
-    loadPartial("site-about", "./assets/components/about.html"),
-    loadPartial("site-services", "./assets/components/services/index.html"),
-    loadPartial("site-footer", "./assets/components/footer.html"),
-    loadPartial("site-contact-modal", "./assets/components/contact-modal.html"),
+    loadPartial("site-header", "./partials/header.html"),
+    loadPartial("site-home", "./partials/home.html"),
+    loadPartial("site-about", "./partials/about.html"),
+    loadPartial("site-services", "./partials/services/index.html"),
+    loadPartial("site-footer", "./partials/footer.html"),
+    loadPartial("site-contact-modal", "./partials/contact-modal.html"),
   ];
 
   // load your services pieces…
   const services = [
-    loadPartial("services-hero", "./assets/components/services/01-hero.html"),
+    loadPartial("services-hero", "./partials/services/01-hero.html"),
     loadPartial(
       "services-diagnostics",
-      "./assets/components/services/02-diagnostics.html"
+      "./partials/services/02-diagnostics.html"
     ),
     loadPartial(
       "services-consultation",
-      "./assets/components/services/03-consultation.html"
+      "./partials/services/03-consultation.html"
     ),
-    loadPartial(
-      "services-support",
-      "./assets/components/services/04-support.html"
-    ),
-    loadPartial(
-      "services-pricing",
-      "./assets/components/services/05-pricing.html"
-    ),
-    loadPartial("services-faq", "./assets/components/services/06-faq.html"),
-    loadPartial(
-      "services-final-cta",
-      "./assets/components/services/07-final-cta.html"
-    ),
+    loadPartial("services-support", "./partials/services/04-support.html"),
+    loadPartial("services-pricing", "./partials/services/05-pricing.html"),
+    loadPartial("services-faq", "./partials/services/06-faq.html"),
+    loadPartial("services-final-cta", "./partials/services/07-final-cta.html"),
   ];
 
   // fire them all in parallel

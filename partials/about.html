@@ -1,5 +1,4 @@
 <div v-if="activePage === 'about'">
-  <!-- ABOUT HERO -->
   <section class="relative w-full overflow-hidden">
     <!-- Background gradient (matches photo bg) -->
     <div
@@ -7,7 +6,7 @@
     ></div>
 
     <div
-      class="relative container mx-auto px-6 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+      class="relative container mx-auto px-6 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center pt-12"
     >
       <!-- Text -->
       <div class="flex flex-col z-10 px-20">
@@ -17,29 +16,39 @@
           Meet Your Skincare Expert
         </h1>
 
-        <!-- Mobile photo -->
+        <!-- Mobile: staggered fade-in entrance -->
         <div class="relative h-72 w-full mb-6 lg:hidden">
           <img
-            src="./assets/images/about/hero-portrait.jpg"
-            alt="Irina — Holistic Esthetician"
-            class="w-full h-full object-cover [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] [mask-repeat:no-repeat] [mask-size:100%_100%] [mask-position:center] [--webkit-mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] [--webkit-mask-repeat:no-repeat] [--webkit-mask-size:100%_100%] [--webkit-mask-position:center]"
+            v-for="(img, idx) in heroImages"
+            :key="idx"
+            :src="img.src"
+            :alt="img.alt"
+            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] [mask-repeat:no-repeat] [mask-size:100%_100%] [mask-position:center] [--webkit-mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] [--webkit-mask-repeat:no-repeat] [--webkit-mask-size:100%_100%] [--webkit-mask-position:center]"
+            :class="img.show ? 'opacity-100' : 'opacity-0'"
+            :fetchpriority="idx === 0 ? 'high' : 'auto'"
+            decoding="async"
           />
         </div>
 
         <p class="text-lg text-gray-600 text-left max-w-prose leading-8">
-          Hello! I’m Irina, a holistic esthetician passionate about helping you
+          Hello! I'm Irina, a holistic esthetician passionate about helping you
           achieve radiant, healthy skin. I combine research-backed methods with
           cosmetic chemistry know-how to craft routines that fit your lifestyle
           and budget.
         </p>
       </div>
 
-      <!-- Desktop photo -->
-      <div class="relative h-[28rem] hidden lg:block z-10">
+      <!-- Desktop: same entrance animation in the taller box -->
+      <div class="relative h-[40rem] hidden lg:block z-10">
         <img
-          src="./assets/images/about/hero-portrait.jpg"
-          alt="Irina — Holistic Esthetician"
-          class="h-full w-auto object-cover mx-auto [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] [mask-repeat:no-repeat] [mask-size:100%_100%] [mask-position:center] [--webkit-mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] [--webkit-mask-repeat:no-repeat] [--webkit-mask-size:100%_100%] [--webkit-mask-position:center]"
+          v-for="(img, idx) in heroImages"
+          :key="idx"
+          :src="img.src"
+          :alt="img.alt"
+          class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] [mask-repeat:no-repeat] [mask-size:100%_100%] [mask-position:center] [--webkit-mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] [--webkit-mask-repeat:no-repeat] [--webkit-mask-size:100%_100%] [--webkit-mask-position:center]"
+          :class="img.show ? 'opacity-100' : 'opacity-0'"
+          :fetchpriority="idx === 0 ? 'high' : 'auto'"
+          decoding="async"
         />
       </div>
     </div>
@@ -144,7 +153,7 @@
     <div class="text-center">
       <p class="text-2xl font-semibold">Ready to take the first step?</p>
       <img
-        src="./assets/images/seedling_temp_icon.png"
+        src="./images/seedling_temp_icon.png"
         alt="seedling icon"
         class="size-14 mx-auto my-4"
       />

@@ -1,9 +1,9 @@
 <div v-if="activePage === 'home'" class="relative">
   <!-- HERO -->
-  <section class="relative w-full bg-[#F8F6F2] overflow-hidden py-16 lg:px-16">
+  <section class="relative w-full bg-[#F8F6F2] overflow-hidden py-32 lg:px-16">
     <!-- Content container -->
     <div
-      class="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-8 px-4 lg:px-16 py-10"
+      class="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-8 px-4 lg:px-16 py-12"
     >
       <!-- Text -->
       <div class="relative z-10 text-center lg:text-left">
@@ -38,26 +38,26 @@
       <!-- Mobile image (keeps layout nice on small screens) -->
       <div class="lg:hidden flex justify-center items-end">
         <img
-          src="./assets/images/hero_main.png"
+          src="./images/hero_main.png"
           alt="Skincare"
           class="w-full max-w-sm object-contain drop-shadow-2xl -mb-4"
         />
       </div>
     </div>
-
+    <!-- olive branch right -->
     <div
       class="absolute top-5 -right-5 rotate-[17deg] w-48 h-48 bg-no-repeat bg-contain opacity-25 z-0"
-      style="background-image: url('./assets/images/olive_branch_2.png')"
+      style="background-image: url('./images/olive_branch_2.png')"
     ></div>
-
+    <!-- olive branch left -->
     <div
-      class="absolute top-[240px] -left-24 w-56 h-56 bg-no-repeat rotate-[78deg] bg-contain opacity-25 z-0"
-      style="background-image: url('./assets/images/olive_branch_1.png')"
+      class="absolute top-[380px] -left-24 w-56 h-56 bg-no-repeat rotate-[78deg] bg-contain opacity-25 z-0"
+      style="background-image: url('./images/olive_branch_1.png')"
     ></div>
 
     <!-- Desktop PNG cutout, pinned to bottom-right, edge-to-edge -->
     <img
-      src="./assets/images/hero_main.png"
+      src="./images/hero_main.png"
       alt="Skincare"
       class="hidden lg:block absolute -bottom-16 right-32 h-[70vh] max-h-[720px] object-contain drop-shadow-2xl pointer-events-none select-none"
     />
@@ -173,7 +173,7 @@
           class="group relative overflow-hidden rounded-2xl ring-1 ring-black/5"
         >
           <img
-            src="/ig/01.jpg"
+            src="/images/01.jpg"
             alt="Gentle exfoliation tip"
             class="w-full aspect-square object-cover"
           />
